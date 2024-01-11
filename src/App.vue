@@ -23,18 +23,8 @@
       </div>
       <hr>
       <div class="input_wrap">
-        <label for="number">번호</label>
-        <input type="text" id="number" v-model="number" placeholder="ex) 02.000.0000">
-      </div>
-      <hr>
-      <div class="input_wrap">
-        <label for="fax">팩스</label>
-        <input type="text" id="fax" v-model="fax" placeholder="ex) 02.000.0000">
-      </div>
-      <hr>
-      <div class="input_wrap">
         <label for="pn">휴대폰번호</label>
-        <input type="text" id="pn" v-model="pn" placeholder="ex) 010.0000.0000">
+        <input type="text" id="pn" v-model="pn" placeholder="ex) 01012345678">
       </div>
       <hr>
       <div class="input_wrap">
@@ -44,6 +34,7 @@
     <hr>
     <div class="result">
       <h2>미리보기</h2>
+      <P>* 입력한 값이 맞는지 확인해주세요. *</P>
       <div class="table">
         <table style="padding: 0; border: none; background: #FFFFFF; font-size: 11pt;">
           <tr>
@@ -54,9 +45,9 @@
           </tr>
           <tr style="height: 1.13em;">
             <td cellspacing="0" cellpadding="0">
-              <span style="font-size: 0.69em; font-weight: 400; color: #575757; font-family: '맑은고딕', '나눔고딕', 'MS Gothic', 'AppleGothic'; vertical-align: middle; line-height: 150%;">{{직책}}</span>
+              <span style="font-size: 0.69em; font-weight: 400; color: #575757; font-family: '맑은고딕', '나눔고딕', 'MS Gothic', 'AppleGothic'; line-height: 150%;">{{직책}}</span>
               <span style="display: inline-block; width: 0.19em; height: 0.19em; background-color: #BBBBBB; vertical-align: middle; border-radius: 100px; display: inline-block; margin: 0 4px;"></span>
-              <span style="font-size: 0.69em; font-weight: 400; color: #575757; font-family: 'Tahoma'; vertical-align: middle; line-height: 150%;">{{부서}}</span>
+              <span style="font-size: 0.69em; font-weight: 400; color: #575757; font-family: 'Tahoma'; line-height: 150%;">{{부서}}</span>
             </td>
           </tr>
           <tr style="height: 1.63em; width: 100%;">
@@ -64,10 +55,10 @@
               <table style="width: 100%; font-size: 11pt;">
                 <tr>
                   <td style="width: 33.3%;" cellspacing="0" cellpadding="0">
-                    <span style="font-size: 0.75em; font-weight: 700; color: #E01728; font-family: 'Tahoma'; vertical-align: top; line-height: 150%;">T.</span>&nbsp;<span style="font-size: 0.75em; font-weight: 700; font-family: 'Tahoma'; vertical-align: top; line-height: 150%; color: #000000;">{{번호}}</span>
+                    <span style="font-size: 0.75em; font-weight: 700; color: #E01728; font-family: 'Tahoma'; vertical-align: top; line-height: 150%;">T.</span>&nbsp;<span style="font-size: 0.75em; font-weight: 700; font-family: 'Tahoma'; vertical-align: top; line-height: 150%; color: #000000;">02.332.6251</span>
                   </td>
                   <td style="width: 33.3%;" cellspacing="0" cellpadding="0">
-                    <span style="font-size: 0.75em; font-weight: 700; color: #E01728; font-family: 'Tahoma'; vertical-align: top; line-height: 150%;">F.</span>&nbsp;<span style="font-size: 0.75em; font-weight: 700; font-family: 'Tahoma'; vertical-align: top; line-height: 150%; color: #000000;">{{팩스}}</span>
+                    <span style="font-size: 0.75em; font-weight: 700; color: #E01728; font-family: 'Tahoma'; vertical-align: top; line-height: 150%;">F.</span>&nbsp;<span style="font-size: 0.75em; font-weight: 700; font-family: 'Tahoma'; vertical-align: top; line-height: 150%; color: #000000;">02.332.6253</span>
                   </td>
                   <td style="width: 33.3%;" cellspacing="0" cellpadding="0">
                     <span style="font-size: 0.75em; font-weight: 700; color: #E01728; font-family: 'Tahoma'; vertical-align: top; line-height: 150%;">M.</span>&nbsp;<span style="font-size: 0.75em; font-weight: 700; font-family: 'Tahoma'; vertical-align: top; line-height: 150%; color: #000000;">{{휴대폰번호}}</span>
@@ -87,6 +78,7 @@
     <hr>
     <div class="guide">
       <h2>서명 설정 방법</h2>
+      <P>* 모바일 또는 앱에서는 서명 설정이 불가합니다. *</P>
       <img src="../src/assets/guide.png">
     </div>
     <div class="popup">
@@ -101,16 +93,12 @@ const name = ref('')
 const position = ref('')
 const rank = ref('')
 const team = ref('')
-const number = ref('')
-const fax = ref('')
 const pn = ref('')
 
 const 이름 = ref()
 const 직위 = ref()
 const 직책 = ref()
 const 부서 = ref()
-const 번호 = ref()
-const 팩스 = ref()
 const 휴대폰번호 = ref()
 
 const done = () => {
@@ -118,9 +106,13 @@ const done = () => {
   직위.value = position.value
   직책.value = rank.value
   부서.value = team.value
-  번호.value = number.value
-  팩스.value = fax.value
-  휴대폰번호.value = pn.value
+  휴대폰번호.value = pn.value.replace(/[^0-9]/g, '').replace(/^(\d{3})(\d{4})(\d{4})$/, `$1.$2.$3`)
+
+  // const pnArr = []
+  // pnArr.push(pn.value.substring(0,3))
+  // pnArr.push(pn.value.substring(3,7))
+  // pnArr.push(pn.value.substring(7,11))
+  // 휴대폰번호.value = pnArr.join('.')
 
   const code = `
   <table style="padding: 0; border: none; background: #FFFFFF; font-size: 11pt;">\n<tr>\n
@@ -141,10 +133,10 @@ const done = () => {
         <table style="width: 100%; font-size: 11pt;">\n
           <tr>\n
             <td style="width: 33.3%;" cellspacing="0" cellpadding="0">\n
-              <span style="font-size: 0.75em; font-weight: 700; color: #E01728; font-family: 'Tahoma'; vertical-align: top; line-height: 150%;">T.</span>&nbsp;<span style="font-size: 0.75em; font-weight: 700; font-family: 'Tahoma'; vertical-align: top; line-height: 150%; color: #000000;">${번호.value}</span>\n
+              <span style="font-size: 0.75em; font-weight: 700; color: #E01728; font-family: 'Tahoma'; vertical-align: top; line-height: 150%;">T.</span>&nbsp;<span style="font-size: 0.75em; font-weight: 700; font-family: 'Tahoma'; vertical-align: top; line-height: 150%; color: #000000;">02.332.6251</span>\n
             </td>\n
             <td style="width: 33.3%;" cellspacing="0" cellpadding="0">\n
-              <span style="font-size: 0.75em; font-weight: 700; color: #E01728; font-family: 'Tahoma'; vertical-align: top; line-height: 150%;">F.</span>&nbsp;<span style="font-size: 0.75em; font-weight: 700; font-family: 'Tahoma'; vertical-align: top; line-height: 150%; color: #000000;">${팩스.value}</span>\n
+              <span style="font-size: 0.75em; font-weight: 700; color: #E01728; font-family: 'Tahoma'; vertical-align: top; line-height: 150%;">F.</span>&nbsp;<span style="font-size: 0.75em; font-weight: 700; font-family: 'Tahoma'; vertical-align: top; line-height: 150%; color: #000000;">02.332.6253</span>\n
             </td>\n
             <td style="width: 33.3%;" cellspacing="0" cellpadding="0">\n
               <span style="font-size: 0.75em; font-weight: 700; color: #E01728; font-family: 'Tahoma'; vertical-align: top; line-height: 150%;">M.</span>&nbsp;<span style="font-size: 0.75em; font-weight: 700; font-family: 'Tahoma'; vertical-align: top; line-height: 150%; color: #000000;">${휴대폰번호.value}</span>\n
@@ -155,7 +147,7 @@ const done = () => {
     </tr>\n
     <tr>\n
       <td style="padding: 0;" cellspacing="0" cellpadding="0">\n
-        <img src="https://the51dx.github.io/createSignature/logo.png" title="logo" alt="logo" width="100%" height="auto" style="display: block;">\n
+        <img src="https://the51dt.github.io/createSignature/logo.png" title="logo" alt="logo" width="100%" height="auto" style="display: block;">\n
       </td>\n
     </tr>\n
   </table>`
@@ -185,7 +177,7 @@ const popup = () => {
   width: 800px;
   margin: 0 auto;
 }
-h1, h2 {
+h1, h2, p {
   text-align: center;
 }
 .valueForm {
@@ -212,6 +204,7 @@ button {
   color: white;
   width: 100%;
   height: 34px;
+  cursor: pointer;
 }
 .result {
   margin-top: 24px;
