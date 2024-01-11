@@ -45,9 +45,9 @@
           </tr>
           <tr style="height: 1.13em;">
             <td cellspacing="0" cellpadding="0">
-              <span style="font-size: 0.69em; font-weight: 400; color: #575757; font-family: '맑은고딕', '나눔고딕', 'MS Gothic', 'AppleGothic'; line-height: 150%;">{{직책}}</span>
+              <span style="font-size: 0.69em; font-weight: 400; color: #575757; font-family: '맑은고딕', '나눔고딕', 'MS Gothic', 'AppleGothic'; vertical-align: baseline; line-height: 150%;">{{직책}}</span>
               <span style="display: inline-block; width: 0.19em; height: 0.19em; background-color: #BBBBBB; vertical-align: middle; border-radius: 100px; display: inline-block; margin: 0 4px;"></span>
-              <span style="font-size: 0.69em; font-weight: 400; color: #575757; font-family: 'Tahoma'; line-height: 150%;">{{부서}}</span>
+              <span style="font-size: 0.69em; font-weight: 400; color: #575757; font-family: 'Tahoma'; vertical-align: baseline; line-height: 150%;">{{부서}}</span>
             </td>
           </tr>
           <tr style="height: 1.63em; width: 100%;">
@@ -123,9 +123,9 @@ const done = () => {
     </tr>\n
     <tr style="height: 1.13em;">\n
       <td cellspacing="0" cellpadding="0">\n
-        <span style="font-size: 0.69em; font-weight: 400; color: #575757; font-family: '맑은고딕', '나눔고딕', 'MS Gothic', 'AppleGothic'; vertical-align: middle; line-height: 150%;">${직책.value}</span>\n
+        <span style="font-size: 0.69em; font-weight: 400; color: #575757; font-family: '맑은고딕', '나눔고딕', 'MS Gothic', 'AppleGothic'; vertical-align: baseline; line-height: 150%;">${직책.value}</span>\n
         <span style="display: inline-block; width: 0.19em; height: 0.19em; background-color: #BBBBBB; vertical-align: middle; border-radius: 100px;"></span>\n
-        <span style="font-size: 0.69em; font-weight: 400; color: #575757; font-family: 'Tahoma'; vertical-align: middle; line-height: 150%;">${부서.value}</span>\n
+        <span style="font-size: 0.69em; font-weight: 400; color: #575757; font-family: 'Tahoma'; vertical-align: baseline; line-height: 150%;">${부서.value}</span>\n
       </td>\n
     </tr>\n
     <tr style="height: 1.63em; width: 100%;">\n
