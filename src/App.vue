@@ -155,7 +155,7 @@ const done = () => {
     </tr>\n
     <tr>\n
       <td style="padding: 0;" cellspacing="0" cellpadding="0">\n
-        <img src="../../logo.png" title="logo" alt="logo" width="100%" height="auto" style="display: block;">\n
+        <img src="https://the51dx.github.io/createSignature/logo.png" title="logo" alt="logo" width="100%" height="auto" style="display: block;">\n
       </td>\n
     </tr>\n
   </table>`
