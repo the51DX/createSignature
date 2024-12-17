@@ -1,6 +1,7 @@
 <template>
   <div class="wrap">
     <h1>THE 51 메일 서명 생성</h1>
+    <h3>* 다우오피스 그룹웨어는 PC 환경에서만 서명 설정가능합니다. *<br/><span>* 모바일 웹, 앱에서 서명 설정 불가 *</span></h3>
     <div class="valueForm">
       <p>* 완료 버튼을 누르지 않으면 코드가 생성되지 않습니다. 입력 후 꼭 버튼을 눌러주세요. *</p>
       <div class="input_wrap">
@@ -248,8 +249,11 @@ const popup = (el) => {
   margin: 0 auto;
   font-family: "Noto Sans KR", sans-serif;
 }
-h1, h2, p {
+h1, h2, h3, p {
   text-align: center;
+}
+h3 span {
+  color: #E01728;
 }
 .valueForm {
   margin-top: 40px;
@@ -259,6 +263,11 @@ h1, h2, p {
   justify-content: space-between;
   align-items: center;
   padding: 8px;
+  gap: 8px;
+}
+.input_wrap label {
+  flex-shrink: 0;
+  min-width: 80px;
 }
 input {
   appearance: none;
