@@ -81,12 +81,12 @@
             </tr>
             <tr>
               <td style="padding: 0;" cellspacing="0" cellpadding="0">
-                <img :src="'https://the51dt.github.io/createSignature/sign_' + imgSrc + '.png'" title="logo" alt="logo" width="auto" height="42px" style="display: block;">
+                <img v-if="imgSrc" :src="'https://the51dt.github.io/createSignature/sign_' + imgSrc + '.png'" title="logo" alt="logo" width="auto" height="42px" style="display: block;">
               </td>
             </tr>
           </table>
           <div class="input_wrap">
-            <button @click="[copyContentWhite(), popup('.copy')]">white 코드 복사하기</button>
+            <button @click="[copyContentWhite(), popup('.copy')]">코드 복사하기</button>
           </div>
         </div>
         <!-- 블랙코드 -->
@@ -158,7 +158,7 @@ const rank = ref('')
 const team = ref('')
 const pn = ref('')
 const com = ref('')
-let imgSrc
+let imgSrc = ref('')
 
 const 이름 = ref()
 const 직위 = ref()
@@ -179,7 +179,9 @@ const done = () => {
   회사구분.value = com.value
   
   if (회사구분.value) {
-    imgSrc = 회사구분.value
+    console.log(회사구분.value)
+    imgSrc.value = 회사구분.value
+    console.log(imgSrc.value)
   }
 
   // const pnArr = []
@@ -221,7 +223,7 @@ const done = () => {
     </tr>\n
     <tr>\n
       <td style="padding: 0;" cellspacing="0" cellpadding="0">\n
-        <img src="https://the51dt.github.io/createSignature/sign_${imgSrc}.png" title="logo" alt="logo" width="auto" height="42px" style="display: block;">\n
+        <img src="https://the51dt.github.io/createSignature/sign_${imgSrc.value}.png" title="logo" alt="logo" width="auto" height="42px" style="display: block;">\n
       </td>\n
     </tr>\n
   </table>`
