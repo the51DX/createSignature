@@ -33,7 +33,7 @@
         <label for="com">회사구분</label>
         <select v-model="com">
           <option value="T51">The51</option>
-          <option value="T51x">The51X</option>
+          <option value="T51X">The51X</option>
         </select>
       </div>
       <hr>
