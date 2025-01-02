@@ -30,6 +30,14 @@
       </div>
       <hr>
       <div class="input_wrap">
+        <label for="com">회사구분</label>
+        <select v-model="com">
+          <option value="T51">The51</option>
+          <option value="T51x">The51X</option>
+        </select>
+      </div>
+      <hr>
+      <div class="input_wrap">
         <button @click="[done(), popup('.done')]">입력완료</button>
       </div>
     </div>
@@ -39,7 +47,7 @@
       <p>* 입력한 값이 맞는지 확인해주세요. *</p>
       <div class="table">
         <div>
-          <p>white</p>
+          <!-- <p>white</p> -->
           <table style="padding: 0; border: none; background: #FFFFFF; font-size: 11pt;">
             <tr>
               <td cellspacing="0" cellpadding="0">
@@ -73,7 +81,7 @@
             </tr>
             <tr>
               <td style="padding: 0;" cellspacing="0" cellpadding="0">
-                <img src="https://the51dt.github.io/createSignature/logo.png" title="logo" alt="logo" width="auto" height="42px" style="display: block;">
+                <img :src="'https://the51dt.github.io/createSignature/sign_' + imgSrc + '.png'" title="logo" alt="logo" width="auto" height="42px" style="display: block;">
               </td>
             </tr>
           </table>
@@ -149,12 +157,15 @@ const position = ref('')
 const rank = ref('')
 const team = ref('')
 const pn = ref('')
+const com = ref('')
+let imgSrc
 
 const 이름 = ref()
 const 직위 = ref()
 const 직책 = ref()
 const 부서 = ref()
 const 휴대폰번호 = ref()
+const 회사구분 = ref()
 
 let codeW = ref('')
 let codeB = ref('')
@@ -165,6 +176,11 @@ const done = () => {
   직책.value = rank.value
   부서.value = team.value
   휴대폰번호.value = pn.value.replace(/[^0-9]/g, '').replace(/^(\d{3})(\d{4})(\d{4})$/, `$1.$2.$3`)
+  회사구분.value = com.value
+  
+  if (회사구분.value) {
+    imgSrc = 회사구분.value
+  }
 
   // const pnArr = []
   // pnArr.push(pn.value.substring(0,3))
@@ -205,7 +221,7 @@ const done = () => {
     </tr>\n
     <tr>\n
       <td style="padding: 0;" cellspacing="0" cellpadding="0">\n
-        <img src="https://the51dt.github.io/createSignature/logo.png" title="logo" alt="logo" width="auto" height="42px" style="display: block;">\n
+        <img src="https://the51dt.github.io/createSignature/sign_${imgSrc}.png" title="logo" alt="logo" width="auto" height="42px" style="display: block;">\n
       </td>\n
     </tr>\n
   </table>`
@@ -273,6 +289,12 @@ input {
   appearance: none;
   width: 83%;
   padding: 8px;
+  border: 1px solid gray;
+  border-radius: 6px;
+}
+select {
+  width: 85.25%;
+  padding: 7.5px 4px;
   border: 1px solid gray;
   border-radius: 6px;
 }
