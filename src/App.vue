@@ -52,7 +52,7 @@
             <tr>
               <td cellspacing="0" cellpadding="0">
                 <span style="font-size: 1.13em; font-weight: 700; font-family: '맑은고딕', '나눔고딕', 'MS Gothic', 'AppleGothic'; line-height: 150%; color: #000000; display: inline-block; padding-right: 4px;">{{이름}}</span>
-                <span style="font-size: 1.13em; font-weight: 700; font-family: '맑은고딕', '나눔고딕', 'MS Gothic', 'AppleGothic'; line-height: 150%; color: #000000;">{{직위}}</span><span style="display: inline-block; width: 0.06em;"></span><span style="display: inline-block; width: 0.25em; height: 0.25em; background-color: #E01728;"></span>
+                <span style="font-size: 1.13em; font-weight: 700; font-family: '맑은고딕', '나눔고딕', 'MS Gothic', 'AppleGothic'; line-height: 150%; color: #000000;">{{직위}}</span><span style="display: inline-block; width: 0.06em;"></span><span style="display: inline-block; width: 0.25em; height: 0.25em; background-color: #E01728; vertical-align: middle; margin-top: 0.5em;"></span>
               </td>
             </tr>
             <tr style="height: 1.13em;">
@@ -96,7 +96,7 @@
             <tr>
               <td cellspacing="0" cellpadding="0">
                 <span style="font-size: 1.13em; font-weight: 700; font-family: '맑은고딕', '나눔고딕', 'MS Gothic', 'AppleGothic'; line-height: 150%; color: #000000; display: inline-block; padding-right: 4px;">{{이름}}</span>
-                <span style="font-size: 1.13em; font-weight: 700; font-family: '맑은고딕', '나눔고딕', 'MS Gothic', 'AppleGothic'; line-height: 150%; color: #000000;">{{직위}}</span><span style="display: inline-block; width: 0.06em;"></span><span style="display: inline-block; width: 0.25em; height: 0.25em; background-color: #E01728;"></span>
+                <span style="font-size: 1.13em; font-weight: 700; font-family: '맑은고딕', '나눔고딕', 'MS Gothic', 'AppleGothic'; line-height: 150%; color: #000000;">{{직위}}</span><span style="display: inline-block; width: 0.06em;"></span><span style="display: inline-block; width: 0.25em; height: 0.25em; background-color: #E01728; vertical-align: middle; margin-top: 0.5em;"></span>
               </td>
             </tr>
             <tr style="height: 1.13em;">
@@ -194,7 +194,7 @@ const done = () => {
   <table style="padding: 0; border: none; background: #FFFFFF; font-size: 11pt;">\n<tr>\n
       <td cellspacing="0" cellpadding="0">\n
         <span style="font-size: 1.13em; font-weight: 700; font-family: '맑은고딕', '나눔고딕', 'MS Gothic', 'AppleGothic'; line-height: 150%; color: #000000;">${이름.value}</span>\n
-        <span style="font-size: 1.13em; font-weight: 700; font-family: '맑은고딕', '나눔고딕', 'MS Gothic', 'AppleGothic'; line-height: 150%; color: #000000;">${직위.value}</span><span style="display: inline-block; width: 0.06em;"></span><span style="display: inline-block; width: 0.25em; height: 0.25em; background-color: #E01728;"></span>\n
+        <span style="font-size: 1.13em; font-weight: 700; font-family: '맑은고딕', '나눔고딕', 'MS Gothic', 'AppleGothic'; line-height: 150%; color: #000000;">${직위.value}</span><span style="display: inline-block; width: 0.06em;"></span><span style="display: inline-block; width: 0.25em; height: 0.25em; background-color: #E01728; vertical-align: middle; margin-top: 0.5em;"></span>\n
       </td>\n
     </tr>\n
     <tr style="height: 1.13em;">\n
